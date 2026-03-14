@@ -27,7 +27,7 @@ function useTyping(words, speed = 90, pause = 1800) {
     return text;
 }
 
-const TYPING_WORDS = ["MeenZa007 SigmagGirl","Web Developer 🌸", "UI/UX Designer ✨", "Creative Coder 💻"];
+const TYPING_WORDS = ["AuMeen007 SigmagGirl", "Web Developer 🌸", "UI/UX Designer ✨", "Creative Coder 💻"];
 
 const STATS = [
     { num: "5+", label: "ปีที่เรียน" },
@@ -57,7 +57,7 @@ export default function Home({ navigate }) {
             {/* ── Hero ── */}
             <section className="page-section hero" style={{ minHeight: "auto", paddingBottom: 40 }}>
                 <Flowers />
-                <img src="/images/profile.PNG" className="profile" alt="My Profile" />
+                <img src="/images/profile.png" className="profile" alt="Suhatthya profile" />
                 <h2 style={{ fontSize: 52 }}>
                     Hi, I'm <span className="typing-text">{typed}</span>
                     <span className="cursor-blink" />

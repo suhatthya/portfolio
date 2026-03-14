@@ -20,6 +20,31 @@ const AWARDS = [
     },
 ];
 
+const INTERNSHIPS = [
+    {
+        level: "ระดับ ปวช.",
+        company: "Advice สาขา U085",
+        location: "จ.ราชบุรี",
+        period: "17 พ.ค. 2564 — 17 ก.ย. 2564",
+        tasks: ["ซ่อมคอมพิวเตอร์", "ขายสินค้าคอมพิวเตอร์", "จัดสต็อกสินค้า", "เช็คสินค้า"],
+        color: "var(--blue)",
+        border: "rgba(153,193,221,0.3)",
+        bg: "rgba(153,193,221,0.07)",
+        icon: "🖥️",
+    },
+    {
+        level: "ระดับ ปวส.",
+        company: "ร้าน 9com",
+        location: "จ.ราชบุรี",
+        period: "27 ก.พ. 2566 — 6 พ.ค. 2566",
+        tasks: ["ติดตั้งกล้องวงจรปิด", "ซ่อมกล้องวงจรปิด", "ซ่อมเครื่องปริ้นเตอร์", "ซ่อมคอมพิวเตอร์", "ออกไปดูงานภาคสนาม"],
+        color: "var(--green)",
+        border: "rgba(146,204,148,0.3)",
+        bg: "rgba(146,204,148,0.07)",
+        icon: "📷",
+    },
+];
+
 const GOALS = [
     { icon: "💻", text: "Frontend / Full Stack Developer" },
     { icon: "🤖", text: "นักพัฒนาด้าน AI & Machine Learning" },
@@ -40,7 +65,7 @@ export default function About() {
             }}>
                 {/* ── Left: รูป + chips ── */}
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20, flexShrink: 0 }}>
-                    <img src="/images/profile.PNG" className="about-img" alt="My Photo"
+                    <img src="/images/profile.PNG" className="about-img" alt="Suhatthya"
                         style={{ width: 240, height: 240 }} />
                     <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center", maxWidth: 260 }}>
                         {FUN_FACTS.map((f) => (
@@ -90,6 +115,47 @@ export default function About() {
                             <span style={{ opacity: 0.75 }}>แผนกวิชาคอมพิวเตอร์ธุรกิจ — จบวุฒิ ปวช. ปีการศึกษา 2565</span>
                         </li>
                     </ul>
+
+                    {/* ── Internship ── */}
+                    <h3 style={{ color: "var(--blue)", fontSize: 26, marginBottom: 16 }}>💼 ประสบการณ์ฝึกงาน</h3>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 28 }}>
+                        {INTERNSHIPS.map((job) => (
+                            <div key={job.company} style={{
+                                padding: "20px 22px",
+                                border: `1px solid ${job.border}`,
+                                borderRadius: 14,
+                                background: job.bg,
+                            }}>
+                                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 8, marginBottom: 10 }}>
+                                    <div>
+                                        <span style={{ fontSize: 22, marginRight: 8 }}>{job.icon}</span>
+                                        <strong style={{ fontSize: 22, color: job.color }}>{job.company}</strong>
+                                        <span style={{ fontSize: 19, opacity: 0.65, marginLeft: 8 }}>{job.location}</span>
+                                    </div>
+                                    <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                                        <span style={{
+                                            fontSize: 17, padding: "3px 12px",
+                                            border: `1px solid ${job.border}`,
+                                            borderRadius: 20, color: job.color,
+                                            background: "rgba(255,255,255,0.03)",
+                                        }}>{job.level}</span>
+                                    </div>
+                                </div>
+                                <div style={{ fontSize: 18, opacity: 0.6, marginBottom: 12 }}>🗓️ {job.period}</div>
+                                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                                    {job.tasks.map((t) => (
+                                        <span key={t} style={{
+                                            fontSize: 18, padding: "5px 14px",
+                                            border: `1px solid ${job.border}`,
+                                            borderRadius: 20,
+                                            background: "rgba(255,255,255,0.03)",
+                                            opacity: 0.9,
+                                        }}>• {t}</span>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
 
                     {/* ── Awards ── */}
                     <h3 style={{ color: "var(--amber)", fontSize: 26, marginBottom: 12 }}>🏅 ผลงาน & รางวัล</h3>

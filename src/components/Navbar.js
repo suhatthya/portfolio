@@ -1,6 +1,6 @@
 import React from "react";
 
-const LINKS = ["Home", "About", "Projects", "Skills", "Contact"];
+const LINKS = ["Home", "About", "Projects", "Skills", "Transcript", "Contact"];
 
 export default function Navbar({ current, navigate }) {
     return (

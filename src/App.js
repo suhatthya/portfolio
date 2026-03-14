@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
+import Transcript from "./pages/Transcript";
 import "./App.css";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
     }, 400);
   };
 
-  const pages = { Home, About, Projects, Skills, Contact };
+  const pages = { Home, About, Projects, Skills, Contact, Transcript };
   const PageComponent = pages[page];
 
   return (
@@ -36,7 +37,9 @@ function App() {
         </div>
       )}
       <Navbar current={page} navigate={navigate} />
-      <PageComponent navigate={navigate} />
+      <main>
+        <PageComponent navigate={navigate} />
+      </main>
     </>
   );
 }
