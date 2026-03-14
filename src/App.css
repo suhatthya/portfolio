@@ -7,14 +7,14 @@
 
 /* ── Variables ── */
 :root {
-  --pink: #F2B5C8;
-  --blue: #99C1DD;
-  --green: #92CC94;
-  --purple: #E4C1F9;
-  --amber: #F8D7A6;
-  --cream: #FFF5EC;
-  --dark: #5A4A42;
-  --bg: #1a0e0a;
+  --pink: #F2B5C8;    /* Cameo Pink */
+  --blue: #99C1DD;    /* Pale Cerulean */
+  --green: #92CC94;   /* Eton Blue */
+  --cream: #FFF5EC;   /* Seashell — สีฟอนต์หลัก */
+  --purple: #F2B5C8;  /* ไม่มีใน palette → ใช้ pink แทน */
+  --amber: #92CC94;   /* ไม่มีใน palette → ใช้ green แทน */
+  --dark: #4A3F39;    /* น้ำตาลเทาจาก palette background */
+  --bg: #1a0e0a;      /* คงไว้ */
 }
 
 * {

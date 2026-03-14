@@ -26,7 +26,8 @@ function App() {
     }, 400);
   };
 
-  const pages = { Home, About, Projects, Skills, Contact, Transcript };
+  // ตรวจสอบว่าเป็นแบบนี้ไหม
+  const pages = { Home, About, Works: Projects, Skills, Contact, Transcript };
   const PageComponent = pages[page];
 
   return (

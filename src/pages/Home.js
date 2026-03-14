@@ -27,7 +27,7 @@ function useTyping(words, speed = 90, pause = 1800) {
     return text;
 }
 
-const TYPING_WORDS = ["AuMeen007 SigmagGirl", "Web Developer 🌸", "UI/UX Designer ✨", "Creative Coder 💻"];
+const TYPING_WORDS = ["AuMeen007 SigmaGirl 🔥", "Web Developer 🌸", "UI/UX Designer ✨", "Creative Coder 💻"];
 
 const STATS = [
     { num: "5+", label: "ปีที่เรียน" },
@@ -38,14 +38,14 @@ const STATS = [
 
 const PREVIEW = [
     {
-        img: "https://via.placeholder.com/400x250/F2B5C8/5A4A42?text=Project+1",
-        title: "Website E-Commerce",
-        desc: "โปรเจกต์ออกแบบและพัฒนาเว็บไซต์ขายสินค้าออนไลน์",
+        img: "https://picsum.photos/seed/port/400/250",
+        title: "Portfolio Website",
+        desc: "เว็บไซต์รวบรวมผลงานส่วนตัว (ก็คือเว็บนี้นี่แหละ!)",
     },
     {
-        img: "https://via.placeholder.com/400x250/99C1DD/5A4A42?text=Project+2",
-        title: "Database Management",
-        desc: "ระบบจัดการฐานข้อมูลสำหรับองค์กร",
+        img: "https://picsum.photos/seed/automotive/400/250",
+        title: "Automotive App",
+        desc: "แอปพลิเคชันมือถือสำหรับค้นหาและสั่งซื้ออุปกรณ์รถยนต์ พัฒนาด้วย Flutter และ Firebase",
     },
 ];
 
@@ -57,13 +57,13 @@ export default function Home({ navigate }) {
             {/* ── Hero ── */}
             <section className="page-section hero" style={{ minHeight: "auto", paddingBottom: 40 }}>
                 <Flowers />
-                <img src="/images/profile.png" className="profile" alt="Suhatthya profile" />
+                <img src="/images/profile.PNG" className="profile" alt="Suhatthya" />
                 <h2 style={{ fontSize: 52 }}>
                     Hi, I'm <span className="typing-text">{typed}</span>
                     <span className="cursor-blink" />
                 </h2>
                 <p style={{ fontSize: 24 }}>Electronics Computer Technology Student</p>
-                <button className="btn" style={{ fontSize: 20 }} onClick={() => navigate("Projects")}>
+                <button className="btn" style={{ fontSize: 20 }} onClick={() => navigate("Works")}>
                     See My Work
                 </button>
             </section>
@@ -93,7 +93,7 @@ export default function Home({ navigate }) {
                 <h2 style={{ fontSize: 38 }}>Selected Works</h2>
                 <div className="gallery" style={{ marginBottom: 32 }}>
                     {PREVIEW.map((p) => (
-                        <div key={p.title} className="project-card" onClick={() => navigate("Projects")}>
+                        <div key={p.title} className="project-card" onClick={() => navigate("Works")}>
                             <img src={p.img} alt={p.title} />
                             <div style={{ padding: 24 }}>
                                 <h3 style={{ fontSize: 24, marginBottom: 8 }}>{p.title}</h3>
@@ -102,9 +102,6 @@ export default function Home({ navigate }) {
                         </div>
                     ))}
                 </div>
-                <button className="btn btn-blue" style={{ fontSize: 20 }} onClick={() => navigate("Projects")}>
-                    View All Projects
-                </button>
             </section>
         </div>
     );

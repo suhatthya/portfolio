@@ -116,68 +116,6 @@ export default function About() {
                         </li>
                     </ul>
 
-                    {/* ── Internship ── */}
-                    <h3 style={{ color: "var(--blue)", fontSize: 26, marginBottom: 16 }}>💼 ประสบการณ์ฝึกงาน</h3>
-                    <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 28 }}>
-                        {INTERNSHIPS.map((job) => (
-                            <div key={job.company} style={{
-                                padding: "20px 22px",
-                                border: `1px solid ${job.border}`,
-                                borderRadius: 14,
-                                background: job.bg,
-                            }}>
-                                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 8, marginBottom: 10 }}>
-                                    <div>
-                                        <span style={{ fontSize: 22, marginRight: 8 }}>{job.icon}</span>
-                                        <strong style={{ fontSize: 22, color: job.color }}>{job.company}</strong>
-                                        <span style={{ fontSize: 19, opacity: 0.65, marginLeft: 8 }}>{job.location}</span>
-                                    </div>
-                                    <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                                        <span style={{
-                                            fontSize: 17, padding: "3px 12px",
-                                            border: `1px solid ${job.border}`,
-                                            borderRadius: 20, color: job.color,
-                                            background: "rgba(255,255,255,0.03)",
-                                        }}>{job.level}</span>
-                                    </div>
-                                </div>
-                                <div style={{ fontSize: 18, opacity: 0.6, marginBottom: 12 }}>🗓️ {job.period}</div>
-                                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                                    {job.tasks.map((t) => (
-                                        <span key={t} style={{
-                                            fontSize: 18, padding: "5px 14px",
-                                            border: `1px solid ${job.border}`,
-                                            borderRadius: 20,
-                                            background: "rgba(255,255,255,0.03)",
-                                            opacity: 0.9,
-                                        }}>• {t}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* ── Awards ── */}
-                    <h3 style={{ color: "var(--amber)", fontSize: 26, marginBottom: 12 }}>🏅 ผลงาน & รางวัล</h3>
-                    <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 28 }}>
-                        {AWARDS.map((a) => (
-                            <div key={a.title} style={{
-                                display: "flex", gap: 16, alignItems: "flex-start",
-                                padding: "16px 20px",
-                                border: `1px solid ${a.border}`,
-                                borderRadius: 14,
-                                background: a.bg,
-                            }}>
-                                <span style={{ fontSize: 32, flexShrink: 0 }}>{a.icon}</span>
-                                <div>
-                                    <div style={{ fontSize: 22, color: a.color, fontWeight: "bold" }}>{a.title}</div>
-                                    <div style={{ fontSize: 20, lineHeight: 1.7, opacity: 0.85 }}>{a.detail}</div>
-                                    <div style={{ fontSize: 18, opacity: 0.6, marginTop: 2 }}>{a.year}</div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
                     {/* ── Career Goals ── */}
                     <h3 style={{ color: "var(--blue)", fontSize: 26, marginBottom: 12 }}>🎯 เป้าหมายอาชีพ</h3>
                     <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>

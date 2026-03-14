@@ -84,22 +84,22 @@ export default function Skills() {
                 <div style={{
                     gridColumn: "1 / -1",
                     background: "rgba(255,245,236,0.03)",
-                    border: "1px dashed rgba(248,215,166,0.4)",
+                    border: "1px dashed rgba(242,181,200,0.4)",
                     borderRadius: 16,
                     padding: "24px 28px",
                     textAlign: "left",
                 }}>
-                    <h3 style={{ color: "var(--amber)", fontSize: 24, marginBottom: 14 }}>
+                    <h3 style={{ color: "var(--pink)", fontSize: 24, marginBottom: 14 }}>
                         📚 กำลังเรียนรู้เพิ่มเติม
                     </h3>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
                         {LEARNING.map((tag) => (
                             <span key={tag} style={{
                                 padding: "8px 20px",
-                                border: "1px dashed rgba(248,215,166,0.5)",
+                                border: "1px dashed rgba(242,181,200,0.5)",
                                 borderRadius: 20, fontSize: 19,
-                                color: "var(--amber)",
-                                background: "rgba(248,215,166,0.06)",
+                                color: "var(--cream)",
+                                background: "rgba(255,245,236,0.06)",
                             }}>{tag}</span>
                         ))}
                     </div>
