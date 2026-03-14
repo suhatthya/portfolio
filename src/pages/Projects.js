@@ -3,13 +3,13 @@ import Flowers from "../components/Flowers";
 
 const PROJECTS = [
     {
-        img: "https://picsum.photos/seed/port/400/250",
+        img: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=400&h=250&fit=crop",
         title: "Portfolio Website",
         desc: "เว็บไซต์รวบรวมผลงานส่วนตัว (ก็คือเว็บนี้นี่แหละ! 🌸)",
         tags: ["React", "CSS"],
     },
     {
-        img: "https://picsum.photos/seed/automotive/400/250",
+        img: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&h=250&fit=crop",
         title: "Automotive App",
         desc: "แอปพลิเคชันมือถือสำหรับค้นหาและสั่งซื้ออุปกรณ์รถยนต์ พัฒนาด้วย Flutter และ Firebase",
         tags: ["Flutter", "Firebase", "Firestore"],

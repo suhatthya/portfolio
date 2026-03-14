@@ -27,7 +27,7 @@ function useTyping(words, speed = 90, pause = 1800) {
     return text;
 }
 
-const TYPING_WORDS = ["AuMeen007 SigmaGirl 🔥", "Web Developer 🌸", "UI/UX Designer ✨", "Creative Coder 💻"];
+const TYPING_WORDS = ["Suhatthya K. 🔥", "Web Developer 🌸", "UI/UX Designer ✨", "Creative Coder 💻"];
 
 const STATS = [
     { num: "5+", label: "ปีที่เรียน" },
@@ -38,17 +38,17 @@ const STATS = [
 
 const PREVIEW = [
     {
-        img: "https://picsum.photos/seed/port/400/250",
+        img: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=400&h=250&fit=crop",
         title: "Portfolio Website",
-        desc: "เว็บไซต์รวบรวมผลงานส่วนตัว (ก็คือเว็บนี้นี่แหละ!)",
+        desc: "เว็บไซต์รวบรวมผลงานส่วนตัว (ก็คือเว็บนี้นี่แหละ! 🌸)",
     },
     {
-        img: "https://picsum.photos/seed/automotive/400/250",
+        img: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&h=250&fit=crop",
         title: "Automotive App",
         desc: "แอปพลิเคชันมือถือสำหรับค้นหาและสั่งซื้ออุปกรณ์รถยนต์ พัฒนาด้วย Flutter และ Firebase",
     },
 ];
-
+    
 export default function Home({ navigate }) {
     const typed = useTyping(TYPING_WORDS);
 
