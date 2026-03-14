@@ -8,43 +8,6 @@ const FUN_FACTS = [
     { icon: "📺", text: "ดูซีรีส์" },
 ];
 
-const AWARDS = [
-    {
-        icon: "🏆",
-        title: "รางวัลชนะเลิศ",
-        detail: "การแข่งขันทักษะ การประกวดผลงานสะเต็มศึกษา (STEM Education)",
-        year: "ปีการศึกษา 2565",
-        color: "var(--amber)",
-        border: "rgba(248,215,166,0.35)",
-        bg: "rgba(248,215,166,0.07)",
-    },
-];
-
-const INTERNSHIPS = [
-    {
-        level: "ระดับ ปวช.",
-        company: "Advice สาขา U085",
-        location: "จ.ราชบุรี",
-        period: "17 พ.ค. 2564 — 17 ก.ย. 2564",
-        tasks: ["ซ่อมคอมพิวเตอร์", "ขายสินค้าคอมพิวเตอร์", "จัดสต็อกสินค้า", "เช็คสินค้า"],
-        color: "var(--blue)",
-        border: "rgba(153,193,221,0.3)",
-        bg: "rgba(153,193,221,0.07)",
-        icon: "🖥️",
-    },
-    {
-        level: "ระดับ ปวส.",
-        company: "ร้าน 9com",
-        location: "จ.ราชบุรี",
-        period: "27 ก.พ. 2566 — 6 พ.ค. 2566",
-        tasks: ["ติดตั้งกล้องวงจรปิด", "ซ่อมกล้องวงจรปิด", "ซ่อมเครื่องปริ้นเตอร์", "ซ่อมคอมพิวเตอร์", "ออกไปดูงานภาคสนาม"],
-        color: "var(--green)",
-        border: "rgba(146,204,148,0.3)",
-        bg: "rgba(146,204,148,0.07)",
-        icon: "📷",
-    },
-];
-
 const GOALS = [
     { icon: "💻", text: "Frontend / Full Stack Developer" },
     { icon: "🤖", text: "นักพัฒนาด้าน AI & Machine Learning" },
