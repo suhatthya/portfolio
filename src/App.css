@@ -1,38 +1,616 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'JaoDoggyCute';
+  src: url('./fonts/JaoDoggyCute.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ── Variables ── */
+:root {
+  --pink: #F2B5C8;
+  --blue: #99C1DD;
+  --green: #92CC94;
+  --purple: #E4C1F9;
+  --amber: #F8D7A6;
+  --cream: #FFF5EC;
+  --dark: #5A4A42;
+  --bg: #1a0e0a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 28px;
+  background: var(--bg);
+  color: var(--cream);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── Loader ── */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(242, 181, 200, 0.25);
+  border-top-color: var(--pink);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* ── Flowers ── */
+.flower-wrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.petal {
+  position: absolute;
+  top: -30px;
+  border-radius: 50% 0 50% 0;
+  opacity: 0;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(400deg);
+    opacity: 0;
+  }
+}
+
+/* ── Header ── */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 16px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(26, 14, 10, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(242, 181, 200, 0.15);
+  z-index: 500;
+}
+
+.logo {
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 1.9rem;
+  font-weight: normal;
+  color: var(--pink);
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: rgba(255, 245, 236, 0.6);
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover {
+  color: var(--cream);
+  background: rgba(255, 245, 236, 0.08);
+}
+
+.nav-btn.active {
+  color: var(--bg);
+  background: var(--pink);
+}
+
+/* ── Sections (common) ── */
+.page-section {
   min-height: 100vh;
+  padding: 100px 24px 60px;
+  position: relative;
+}
+
+/* ── Hero ── */
+.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  padding-top: 120px;
 }
 
-.App-link {
-  color: #61dafb;
+.profile {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--pink);
+  margin-bottom: 28px;
+  box-shadow: 0 0 40px rgba(242, 181, 200, 0.25);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.profile-placeholder {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid var(--pink);
+  margin-bottom: 28px;
+  background: rgba(242, 181, 200, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+}
+
+.hero h2 {
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-weight: normal;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.typing-text {
+  color: var(--pink);
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: var(--pink);
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
   }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero p {
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 1.4rem;
+  opacity: 0.75;
+  margin-bottom: 36px;
+  letter-spacing: 1px;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  padding: 13px 36px;
+  border: 2px solid var(--pink);
+  color: var(--pink);
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 1.15rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 30px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.btn:hover {
+  background: var(--pink);
+  color: var(--bg);
+}
+
+.btn-blue {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.btn-blue:hover {
+  background: var(--blue);
+  color: var(--bg);
+}
+
+/* ── Gallery / Cards ── */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: rgba(255, 245, 236, 0.05);
+  border: 1px solid rgba(242, 181, 200, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(242, 181, 200, 0.15);
+  border-color: var(--pink);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card h3 {
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin-bottom: 6px;
+}
+
+.project-card p {
+  font-size: 1.05rem;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+/* ── Section title ── */
+.section-title {
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: normal;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.section-title span {
+  color: var(--pink);
+}
+
+/* ── About ── */
+.about-container {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.about-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--pink);
+  flex-shrink: 0;
+  box-shadow: 0 0 40px rgba(242, 181, 200, 0.2);
+}
+
+.about-img-placeholder {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid var(--pink);
+  flex-shrink: 0;
+  background: rgba(242, 181, 200, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+}
+
+.about-text h2 {
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 2.4rem;
+  font-weight: normal;
+  margin-bottom: 16px;
+  color: var(--pink);
+  letter-spacing: 1px;
+}
+
+.about-text p {
+  line-height: 1.9;
+  opacity: 0.85;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.about-text h3 {
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin: 24px 0 12px;
+  letter-spacing: 0.5px;
+}
+
+.about-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-list li {
+  opacity: 0.85;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* ── Skills ── */
+.skills-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skill-category {
+  background: rgba(255, 245, 236, 0.04);
+  border: 1px solid rgba(242, 181, 200, 0.2);
+  border-radius: 16px;
+  padding: 24px 28px;
+  text-align: left;
+}
+
+.skill-category h3 {
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.skill-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 245, 236, 0.25);
+  border-radius: 20px;
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 1.05rem;
+  font-weight: normal;
+  color: var(--cream);
+  background: rgba(255, 245, 236, 0.06);
+  transition: all 0.2s;
+}
+
+.skill-tag:hover {
+  background: rgba(242, 181, 200, 0.15);
+  border-color: var(--pink);
+  color: var(--pink);
+}
+
+/* ── Contact ── */
+.contact-intro {
+  font-size: 1.25rem;
+  opacity: 0.8;
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: rgba(255, 245, 236, 0.05);
+  border: 2px solid rgba(242, 181, 200, 0.35);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--cream);
+  width: 160px;
+  transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 245, 236, 0.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-icon {
+  font-size: 2rem;
+}
+
+.contact-card h3 {
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 1.15rem;
+  font-weight: normal;
+  color: var(--pink);
+}
+
+.contact-card p {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* ── Popup ── */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 800;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.popup-box {
+  background: #2a1a14;
+  border: 3px solid var(--pink);
+  border-radius: 20px;
+  padding: 40px 36px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--pink);
+  background: none;
+  border: none;
+  line-height: 1;
+  transition: opacity 0.2s;
+}
+
+.popup-close:hover {
+  opacity: 0.6;
+}
+
+.popup-box h3 {
+  font-family: 'JaoDoggyCute', sans-serif;
+  color: var(--pink);
+  font-size: 1.9rem;
+  font-weight: normal;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.popup-box p {
+  line-height: 1.8;
+  opacity: 0.85;
+  font-size: 1.2rem;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 32px 20px;
+  border-top: 1px solid rgba(255, 245, 236, 0.08);
+  font-size: 1.05rem;
+  opacity: 0.5;
+}
+
+/* ── Selected Works preview ── */
+.preview-section {
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.preview-section h2 {
+  font-family: 'JaoDoggyCute', sans-serif;
+  font-size: 2.2rem;
+  font-weight: normal;
+  margin-bottom: 36px;
+  letter-spacing: 1px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  header {
+    padding: 14px 20px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-img,
+  .about-img-placeholder {
+    width: 160px;
+    height: 160px;
+  }
+
+  nav {
+    gap: 4px;
+  }
+
+  .nav-btn {
+    font-size: 1rem;
+    padding: 5px 10px;
   }
 }
